@@ -3,7 +3,7 @@ using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Tilføjer services til containeren.
 
 builder.Services.AddControllers();
 
@@ -13,7 +13,7 @@ builder.Services.AddScoped<IMessageProducer, RabbitMQProducer>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Konfigurere HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -21,8 +21,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-//app.UseAuthorization();
 
 app.MapControllers();
 
