@@ -9,7 +9,8 @@ builder.Services.AddControllers();
 
 builder.Services.AddOpenApi();
 
-builder.Services.AddScoped<IMessageProducer, RabbitMQProducer>();
+// Vi bruger Singleton, da RabbitMQProducer nu holder en aktiv forbindelse åben
+builder.Services.AddSingleton<IMessageProducer, RabbitMQProducer>();
 
 var app = builder.Build();
 

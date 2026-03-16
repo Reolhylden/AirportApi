@@ -5,11 +5,11 @@ using AirportApi.Services;
 namespace AirportApi.Controllers
 {
     [ApiController]
-    [Route("api/controller")]
+    [Route("api/[controller]")]
     public class FlightsController : ControllerBase
     {
         // Statisk liste til at simulere database
-        private static List<Flight> _flights = new List<Flight>();
+        private static List<Flight> _flights = new();
         private readonly IMessageProducer _messageProducer;
 
         // Constructor injection
